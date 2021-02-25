@@ -11,13 +11,15 @@ namespace Solution
     {
         public static void Main(string[] args)
         {
-            TruckPassingBridge truckPassingBridge = new TruckPassingBridge();
+            FunctionDevelopment functionDevelopment = new FunctionDevelopment();
 
-            int bridge_length = 2;
-            int weight = 10;
-            int[] truck_weights = new int[] { 7, 4, 5, 6 };
+            int[] progresses = new int[] { 93, 30, 55 };
+            int[] speeds = new int[] { 1, 30, 5 };
 
-            Console.WriteLine(truckPassingBridge.solution(bridge_length, weight, truck_weights));
+            foreach (int i in functionDevelopment.solution(progresses, speeds))
+                Console.Write(i.ToString() + " ");
+            
+            Console.WriteLine();
         }
     }
 }
