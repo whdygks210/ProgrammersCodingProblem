@@ -11,12 +11,13 @@ namespace Solution
     {
         public static void Main(string[] args)
         {
-            SkillTree skillTree = new SkillTree();
+            TruckPassingBridge truckPassingBridge = new TruckPassingBridge();
 
-            string skill = "CBD";
-            string[] skill_trees = new string[] { "BACDE", "CBADF", "AECB", "BDA" };
+            int bridge_length = 2;
+            int weight = 10;
+            int[] truck_weights = new int[] { 7, 4, 5, 6 };
 
-            Console.WriteLine(skillTree.solution(skill, skill_trees));
+            Console.WriteLine(truckPassingBridge.solution(bridge_length, weight, truck_weights));
         }
     }
 }
