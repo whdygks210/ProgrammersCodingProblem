@@ -11,12 +11,11 @@ namespace Solution
     {
         public static void Main(string[] args)
         {
-            TriangleSnail problem = new TriangleSnail();
+            LargestNumber problem = new LargestNumber();
 
-            foreach (int i in problem.solution(4))
-                Console.Write(i.ToString() + " ");
-            
-            Console.WriteLine();
+            int[] numbers = new int[] { 6, 10, 2 };
+
+            Console.WriteLine(problem.solution(numbers));
         }
     }
 }
