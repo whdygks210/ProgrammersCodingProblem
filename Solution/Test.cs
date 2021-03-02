@@ -11,11 +11,9 @@ namespace Solution
     {
         public static void Main(string[] args)
         {
-            StockPrice problem = new StockPrice();
+            TriangleSnail problem = new TriangleSnail();
 
-            int[] prices = new int[] { 1, 2, 3, 2, 3 };
-
-            foreach (int i in problem.solution(prices))
+            foreach (int i in problem.solution(4))
                 Console.Write(i.ToString() + " ");
             
             Console.WriteLine();
