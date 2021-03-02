@@ -11,11 +11,9 @@ namespace Solution
     {
         public static void Main(string[] args)
         {
-            LargestNumber problem = new LargestNumber();
+            FindPrimeNumber problem = new FindPrimeNumber();
 
-            int[] numbers = new int[] { 6, 10, 2 };
-
-            Console.WriteLine(problem.solution(numbers));
+            Console.WriteLine(problem.solution("17"));
         }
     }
 }

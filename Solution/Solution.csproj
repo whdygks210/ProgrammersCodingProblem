@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Level2\FindPrimeNumber.cs" />
     <Compile Include="Level2\FunctionDevelopment.cs" />
     <Compile Include="Level2\LargestNumber.cs" />
     <Compile Include="Level2\Printer.cs" />
