@@ -11,12 +11,11 @@ namespace Solution
     {
         public static void Main(string[] args)
         {
-            FunctionDevelopment functionDevelopment = new FunctionDevelopment();
+            StockPrice problem = new StockPrice();
 
-            int[] progresses = new int[] { 93, 30, 55 };
-            int[] speeds = new int[] { 1, 30, 5 };
+            int[] prices = new int[] { 1, 2, 3, 2, 3 };
 
-            foreach (int i in functionDevelopment.solution(progresses, speeds))
+            foreach (int i in problem.solution(prices))
                 Console.Write(i.ToString() + " ");
             
             Console.WriteLine();
