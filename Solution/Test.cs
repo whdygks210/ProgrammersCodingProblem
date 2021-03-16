@@ -11,9 +11,9 @@ namespace Solution
     {
         public static void Main(string[] args)
         {
-            FindPrimeNumber problem = new FindPrimeNumber();
+            MakingBigNumber problem = new MakingBigNumber();
 
-            Console.WriteLine(problem.solution("17"));
+            Console.WriteLine(problem.solution("4177252841", 4));
         }
     }
 }
