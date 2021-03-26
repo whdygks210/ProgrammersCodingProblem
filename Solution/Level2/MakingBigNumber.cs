@@ -19,28 +19,27 @@ namespace Solution.Level2
     //number        k	return
     //"1924"        2	"94"
     //"1231234"     3	"3234"
-    //"4177252841"  4	"775841"
+    //"4177 2528 41"  4	"775841"
 
     public class MakingBigNumber
     {
         public string solution(string number, int k)
         {
-            int len = number.Length - k;
-            char[] answerArray = new char[len];
+            int index = 0;
             List<char> numberList = new List<char>(number);
-            int firstIndex = 0;
 
-            for (int i = 0; i < len; i++)
+            while (numberList.Count > number.Length - k)
             {
-                char max = numberList.Skip(firstIndex).Take(i + k + 1 - firstIndex).Max();
-                answerArray[i] = max;
-                firstIndex = numberList.IndexOf(max);
-
-                for(int j = 0; j < firstIndex + 1; j++)
-                    numberList[j] = '0';
+                if (numberList[index % numberList.Count] < numberList[(index + 1) % numberList.Count])
+                    numberList.RemoveAt(index % numberList.Count);
+                else
+                    index += 1;
             }
 
-            return new string(answerArray);
+
+            //다음 로직 구현 .. 내 앞에 큰놈이 있으면 안되,, 앞에서 부터
+
+            return new string(numberList.ToArray());
         }
     }
 }
