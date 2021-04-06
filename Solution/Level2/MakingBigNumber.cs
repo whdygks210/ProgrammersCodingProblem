@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Solution.Level2
+﻿namespace Solution.Level2
 {
     //문제 설명
     //어떤 숫자에서 k개의 수를 제거했을 때 얻을 수 있는 가장 큰 숫자를 구하려 합니다.
@@ -19,27 +13,29 @@ namespace Solution.Level2
     //number        k	return
     //"1924"        2	"94"
     //"1231234"     3	"3234"
-    //"4177 2528 41"  4	"775841"
+    //"4177252841"  4	"775841"
 
     public class MakingBigNumber
     {
         public string solution(string number, int k)
         {
-            int index = 0;
-            List<char> numberList = new List<char>(number);
+            string maxNumber = number;
+            string compareTemp = "";
 
-            while (numberList.Count > number.Length - k)
+            for (int i = 0; i < k; i++)
             {
-                if (numberList[index % numberList.Count] < numberList[(index + 1) % numberList.Count])
-                    numberList.RemoveAt(index % numberList.Count);
-                else
-                    index += 1;
+                for (int j = 0; j < maxNumber.Length; j++)
+                {
+                    string curNum = maxNumber.Substring(0, j) + maxNumber.Substring(j + 1, maxNumber.Length - 1 - j);
+
+                    if (curNum.CompareTo(compareTemp) > 0)
+                        compareTemp = curNum;
+                }
+
+                maxNumber = compareTemp;
             }
 
-
-            //다음 로직 구현 .. 내 앞에 큰놈이 있으면 안되,, 앞에서 부터
-
-            return new string(numberList.ToArray());
+            return maxNumber.ToString();
         }
     }
 }
